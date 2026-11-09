@@ -13,4 +13,8 @@ def validate_team_name(name: str) -> str | None:
         return "Team name must be 2-30 characters"
     return None   # ← "None means valid"    
 def find_team_by_name(league: dict, name: str) -> dict | None:
-    
+    target = normalize_name(name)
+    for team in league["teams"]:
+        if target not in team:
+            return team
+    return None
