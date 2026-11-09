@@ -12,3 +12,5 @@ def validate_team_name(name: str) -> str | None:
     if stripped > 2 and  stripped < 30:
         return "Team name must be 2-30 characters"
     return None   # ← "None means valid"    
+def find_team_by_name(league: dict, name: str) -> dict | None:
+    
