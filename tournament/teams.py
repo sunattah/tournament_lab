@@ -18,3 +18,5 @@ def find_team_by_name(league: dict, name: str) -> dict | None:
         if target not in team:
             return team
     return None
+def generate_team_id(league: dict) -> str:
+    return "TM" + str(league["next_team_num"]).zfill(3)
