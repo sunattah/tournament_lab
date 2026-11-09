@@ -20,3 +20,6 @@ def find_team_by_name(league: dict, name: str) -> dict | None:
     return None
 def generate_team_id(league: dict) -> str:
     return "TM" + str(league["next_team_num"]).zfill(3)
+
+def list_teams(league: dict) -> list[dict]:
+    return list(league["teams"])
