@@ -24,8 +24,12 @@ def register_team(league: dict, name: str) -> tuple[bool, str]:
     error = validate_team_name()
     if error :
         return None
-    else:
+    if error is not None:
         return "Invalid" 
+    existing = find_team_by_name(league, name)
+    if existing is not None:
+        return f"Team '{existing['name']}' already exists"
+    
 
 
 
