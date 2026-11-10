@@ -13,7 +13,7 @@ def validate_team_name(name: str) -> str | None:
     stripped = name.strip()
     if stripped == "":
         return "Team name cannot be empty"
-    if len(stripped) > 2 or len(stripped) < 30:
+    if len(stripped) < 2 or len(stripped) > 30:
         return "Team name must be 2-30 characters"
     return None   # ← "None means valid" 
 
