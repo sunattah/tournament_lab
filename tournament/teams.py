@@ -34,6 +34,8 @@ def register_team(league: dict, name: str) -> tuple[bool, str]:
     league["teams"].append(team)
     league["next_team_num"] += 1
 
+    return True, f"'{name.strip()}' registered with ID {team_id}"
+
 
 
 def list_teams(league: dict) -> list[dict]:
