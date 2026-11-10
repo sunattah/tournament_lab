@@ -52,3 +52,20 @@ def register_team(league: dict, name: str) -> tuple[bool, str]:
 
 def list_teams(league: dict) -> list[dict]:
     return list(league["teams"])
+
+if __name__ == "__main__":
+    league = {
+        "schema_version": 1,
+        "teams": [],
+        "fixtures": [],
+        "next_team_num": 1,
+        "next_fixture_num": 1,
+    }
+    print(register_team(league, "Red Comets"))
+    print(register_team(league, " red comets "))
+    print(register_team(league, "A"))
+    print(register_team(league, "Blue Wolves"))
+    print(register_team(league, "x" * 31))
+    print(register_team(league, "   "))
+    print(league["teams"])
+    print("next_team_num:", league["next_team_num"])
