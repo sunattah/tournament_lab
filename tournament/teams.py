@@ -29,7 +29,10 @@ def register_team(league: dict, name: str) -> tuple[bool, str]:
     existing = find_team_by_name(league, name)
     if existing is not None:
         return f"Team '{existing['name']}' already exists"
-    
+    team_id = generate_team_id(league)
+    team = make_team(team_id, name.strip())
+    league["teams"].append(team)
+    league["next_team_num"] += 1
 
 
 
